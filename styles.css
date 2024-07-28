@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4a261; /* Arrière-plan orange/jaune */
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+.banner img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    color: #ffffff; /* Blanc */
+    font-size: 4em;
+    text-shadow: 2px 2px 0px #000000; /* Contour noir */
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav .nav-button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+nav .nav-button:hover {
+    background-color: #555;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+section#info {
+    background-color: white;
+    border: 2px solid black;
+    padding: 20px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* Style spécifique pour dernière_videos.html */
+#latest-videos {
+    background-color: #c4e3f3; /* Arrière-plan différent */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.video-item {
+    background-color: #181818;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    margin: 10px;
+    text-align: center;
+}
+
+.video-item img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.video-item .details {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.video-item .logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.video-item .title {
+    font-size: 1em;
+    margin: 0;
+}
