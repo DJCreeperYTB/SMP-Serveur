@@ -4,68 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sponsor</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
     <style>
         body {
             background-color: #3A326C;
-            color: white;
-            font-family: Arial, sans-serif;
         }
-        .container {
+        .sponsor-banner {
             text-align: center;
-            padding: 20px;
+            margin-top: 10px;
         }
-        .banner {
-            width: 100%;
-            max-width: 800px;
-            margin: auto;
+        .sponsor-banner img {
+            max-width: 100%;
         }
-        .content {
+        .sponsor-content {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
             padding: 20px;
-            margin-top: 20px;
+            margin: 20px;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 10px;
         }
-        .content img {
-            max-width: 45%;
-            height: auto;
+        .sponsor-text {
+            max-width: 50%;
         }
-        .text-content {
-            max-width: 45%;
-            text-align: left;
+        .sponsor-text h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
         }
-        .discover-button {
+        .sponsor-text p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .sponsor-button {
             display: inline-block;
             padding: 10px 20px;
-            margin-top: 20px;
-            background: linear-gradient(to right, lightblue, blue);
-            color: white;
+            background: linear-gradient(to bottom, #00BFFF, #0000FF);
             border: 2px solid black;
-            border-radius: 5px;
+            color: white;
             text-decoration: none;
-            font-weight: bold;
+            font-size: 18px;
+            border-radius: 5px;
         }
-        .footer {
-            margin-top: 40px;
-            font-size: 24px; /* Increased font size */
-            font-family: 'Georgia', serif;
+        .sponsor-footer {
+            font-size: 20px;
+            text-align: center;
+            margin-top: 20px;
+            font-family: 'Arial Black', sans-serif;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="C:/Users/DJCre/Documents/code/SMP/OnPowered.png" alt="OnPowered Logo" class="banner">
-        <div class="content">
-            <div class="text-content">
-                <h2>UN HÉBERGEUR MÊLANT<br><strong>FLEXIBILITÉ ET PERFORMANCE</strong></h2>
-                <a href="https://onpowered.net" class="discover-button" target="_blank">Découvrir plus</a>
+    <header>
+        <div class="sponsor-banner">
+            <img src="./OnPowered.png" alt="OnPowered Logo">
+        </div>
+    </header>
+    <main>
+        <div class="sponsor-content">
+            <div class="sponsor-text">
+                <h2>UN HÉBERGEUR MÊLANT <br> FLEXIBILITÉ ET PERFORMANCE</h2>
+                <a href="https://onpowered.net" class="sponsor-button">Découvrir plus</a>
             </div>
-            <img src="C:/Users/DJCre/Documents/code/SMP/servers-cloud-laptop.webp" alt="Servers Cloud Laptop">
+            <div>
+                <img src="./servers-cloud-laptop.webp" alt="OnPowered Image">
+            </div>
         </div>
-        <div class="footer">
-            <p>Bienvenue chez OnPowered, votre partenaire de confiance en matière d'hébergement cloud et de développement en Belgique. Fondée en juin 2023, notre entreprise s'engage à offrir des solutions d'hébergement cloud de qualité supérieure à tous les professionnels, quel que soit leur secteur d'activité. Notre équipe d'experts est dédiée à vous fournir les ressources et le soutien nécessaires pour propulser votre entreprise vers de nouveaux sommets. Chez OnPowered, nous croyons en la puissance de la technologie pour transformer les entreprises et nous sommes ici pour vous aider à réaliser votre potentiel.</p>
+        <div class="sponsor-footer">
+            Bienvenue chez OnPowered, votre partenaire de confiance en matière d'hébergement cloud et de développement en Belgique. Fondée en juin 2023, notre entreprise s'engage à offrir des solutions d'hébergement cloud de qualité supérieure à tous les professionnels, quel que soit leur secteur d'activité. Notre équipe d'experts est dédiée à vous fournir les ressources et le soutien nécessaires pour propulser votre entreprise vers de nouveaux sommets. Chez OnPowered, nous croyons en la puissance de la technologie pour transformer les entreprises et nous sommes ici pour vous aider à réaliser votre potentiel.
         </div>
-    </div>
+    </main>
 </body>
 </html>

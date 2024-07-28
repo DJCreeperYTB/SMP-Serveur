@@ -4,43 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Membres</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
     <style>
-        @font-face {
-            font-family: 'Minecraft';
-            src: url('minecraft_font.ttf') format('truetype');
-        }
         body {
-            background-color: #d3d3d3;
+            background-color: #D3D3D3;
         }
         .members {
-            background-color: white;
-            border: 2px solid black;
-            padding: 20px;
-            margin: 20px;
-            border-radius: 10px;
             max-width: 800px;
             margin: auto;
-            text-align: left;
+            padding: 20px;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 10px;
         }
-        .members h3 {
-            text-align: center;
-        }
-        .member-list {
+        .members ul {
             list-style-type: none;
             padding: 0;
         }
-        .member-list li {
+        .members ul li {
             margin: 10px 0;
-            font-family: 'Minecraft', sans-serif;
+            font-family: 'Minecraftia', sans-serif; /* Assurez-vous d'avoir cette police d'installée */
         }
-        .team-djcreeper {
+        .team-green {
             color: green;
         }
-        .team-arthyoz {
+        .team-red {
             color: red;
         }
-        .team-kk {
+        .team-blue {
             color: blue;
         }
         .solo {
@@ -52,23 +43,21 @@
     <header>
         <h2>Membres</h2>
     </header>
-    <main id="members">
+    <main id="content">
         <div class="members">
-            <h3>Liste des Membres</h3>
-            <ul class="member-list">
-                <li class="team-djcreeper">Alex7209 (Team DJCreeper)</li>
-                <li class="team-djcreeper">DJCreeper (Team DJCreeper)</li>
-                <li class="team-djcreeper">Dindon Mignon (Team DJCreeper)</li>
-                <li class="team-djcreeper">julesperso10 (Team DJCreeper)</li>
+            <ul>
+                <li class="team-green">Alex7209 (Team DJCreeper)</li>
+                <li class="team-red">ArthyoZ (Team ArthyoZ et Agent)</li>
                 <li class="solo">Chabadas (solo)</li>
+                <li class="team-green">DJCreeper (Team DJCreeper)</li>
+                <li class="team-green">Dindon Mignon (Team DJCreeper)</li>
+                <li class="solo">Juste_green (Team KK.)</li>
                 <li class="solo">Kevlevrai_ (solo)</li>
+                <li class="solo">Komafeu (solo)</li>
                 <li class="solo">LostGuppy150 (solo)</li>
+                <li class="solo">Obirush (Team KK.)</li>
                 <li class="solo">_Frust_ (solo)</li>
                 <li class="solo">_ratchette_ (solo)</li>
-                <li class="solo">komafeu (solo)</li>
-                <li class="team-arthyoz">ArthyoZ (Team ArthyoZ et Agent)</li>
-                <li class="team-kk">Juste_green (Team KK)</li>
-                <li class="team-kk">Obirush (Team KK)</li>
             </ul>
         </div>
     </main>

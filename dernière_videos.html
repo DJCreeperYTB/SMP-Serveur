@@ -3,24 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dernière vidéos</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Dernière vidéos mises en ligne</title>
+    <link rel="stylesheet" href="./styles.css">
     <style>
         body {
-            background-color: #c4e3f3; /* Arrière-plan bleu clair */
+            background-color: #ADD8E6;
+        }
+        .video {
+            display: flex;
+            align-items: center;
+            margin: 20px;
+        }
+        .video img {
+            margin-right: 20px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <header>
-        <h2>Dernière vidéos mise en ligne</h2>
+        <h2>Dernière vidéos mises en ligne</h2>
     </header>
-    <main id="latest-videos">
-        <div class="video-item">
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-                <img src="test minia smp.png" alt="Miniature vidéo">
-            </a>
-        </div>
+    <main id="content">
+        <section class="video-section">
+            <div class="video">
+                <img src="./test minia smp.png" alt="Test vidéo SMP" onclick="window.location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'">
+                <div>
+                    <h3>Test vidéo SMP</h3>
+                    <img src="./smp.jpg" alt="Logo YouTubeur" style="width: 50px; height: 50px;">
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 </html>
