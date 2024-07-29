@@ -1,52 +1,69 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modpack Minecraft SMP</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        .mod-list {
-            list-style: none;
-            padding: 0;
-        }
-        .mod-item {
-            background: #fff;
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .mod-item img {
-            max-width: 100px;
-            float: left;
-            margin-right: 20px;
-        }
-        .mod-item:nth-child(odd) {
-            background: #e9e9e9;
-        }
-        .mod-item:nth-child(even) {
-            background: #fff;
-        }
-        .mod-item p {
-            clear: both;
-        }
-        .mod-item ul {
-            padding-left: 20px;
-        }
-    </style>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Modpack Minecraft</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .mod-item {
+                display: none;
+                padding: 20px;
+                margin-bottom: 20px;
+                border-radius: 10px;
+                color: #fff;
+                transition: transform 0.5s, opacity 0.5s;
+            }
+            .mod-item img {
+                max-width: 100px;
+                display: block;
+                margin-bottom: 10px;
+            }
+            .mod-item h2 {
+                margin: 0 0 10px 0;
+            }
+            .mod-item p, .mod-item ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+            .mod-item:nth-child(odd) {
+                background-color: #ff5733;
+            }
+            .mod-item:nth-child(even) {
+                background-color: #33c3ff;
+            }
+            .mod-item:nth-child(3n) {
+                background-color: #33ff57;
+            }
+            .mod-item:nth-child(4n) {
+                background-color: #ff33c3;
+            }
+            .mod-item:nth-child(5n) {
+                background-color: #ffcc33;
+            }
+            .download-link {
+                display: block;
+                text-align: center;
+                margin: 20px 0;
+                padding: 10px 20px;
+                background-color: #333;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
 <body>
     <div class="container">
         <header>
@@ -381,5 +398,25 @@
                 </li>
             </ul>
         </div>
+        <script>
+            window.addEventListener('scroll', function() {
+                var elements = document.querySelectorAll('.mod-item');
+                var windowHeight = window.innerHeight;
+                var windowTop = window.scrollY;
+                var windowBottom = windowTop + windowHeight;
+
+                elements.forEach(function(element) {
+                    var elementTop = element.offsetTop;
+                    var elementHeight = element.offsetHeight;
+                    var elementBottom = elementTop + elementHeight;
+
+                    if (elementTop <= windowBottom && elementBottom >= windowTop) {
+                        element.style.display = 'block';
+                        element.style.transform = 'translateY(0)';
+                        element.style.opacity = '1';
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
