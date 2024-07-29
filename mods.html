@@ -4,93 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modpack Minecraft SMP</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
             background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
+            color: #333;
+            line-height: 1.6;
         }
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
         }
-        header {
-            background: #333;
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #77aaff 3px solid;
-        }
-        header a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-        }
-        ul {
-            padding: 0;
-            list-style: none;
-        }
         .mod-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            list-style: none;
+            padding: 0;
         }
         .mod-item {
             background: #fff;
-            margin: 10px;
+            margin: 20px 0;
             padding: 20px;
+            border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: calc(33% - 40px);
-            box-sizing: border-box;
-            transition: transform 0.3s ease-in-out;
-        }
-        .mod-item:nth-child(odd) {
-            background: #f9f9f9;
-        }
-        .mod-item:hover {
-            transform: translateY(-10px);
         }
         .mod-item img {
-            max-width: 100%;
+            max-width: 100px;
+            float: left;
+            margin-right: 20px;
         }
-        .mod-item strong {
-            display: block;
-            margin-top: 10px;
-            font-size: 1.2em;
-            color: #333;
+        .mod-item:nth-child(odd) {
+            background: #e9e9e9;
+        }
+        .mod-item:nth-child(even) {
+            background: #fff;
         }
         .mod-item p {
-            margin: 10px 0;
+            clear: both;
         }
         .mod-item ul {
             padding-left: 20px;
         }
-        .mod-item ul li {
-            list-style: disc;
-        }
-        .visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
+    <div class="container">
+        <header>
             <h1>Modpack Minecraft SMP</h1>
-        </div>
-    </header>
-    <main class="container">
-        <div class="mod-list">
-            <ul>
+            <p>Découvrez les mods inclus dans notre modpack Minecraft SMP pour une expérience de jeu enrichie et diversifiée.</p>
+        </header>
+        <main>
+            <ul class="mod-list">
                 <li class="mod-item" id="securitycraft">
                     <img src="./securitycraft.jpg" alt="SecurityCraft">
-                    <strong>SecurityCraft</strong> 🛡️ : Protection et sécurité avancées pour vos bases.
-                    <p><strong>Description :</strong> SecurityCraft offre une panoplie d'outils et de dispositifs de sécurité pour protéger vos bases contre les intrusions.</p>
+                    <strong>SecurityCraft</strong> 🛡️ : Mod orienté sur la protection et la sécurité dans Minecraft.
+                    <p><strong>Description :</strong> SecurityCraft offre une panoplie d'outils et dispositifs de sécurité comme des caméras de surveillance, lasers, serrures, et plus encore pour renforcer vos bases.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
                         <li>Caméras de surveillance.</li>
@@ -101,56 +69,56 @@
                 </li>
                 <li class="mod-item" id="alexsmobs">
                     <img src="./alexsmobs.jpg" alt="Alex's Mobs">
-                    <strong>Alex's Mobs</strong> 🦄 : Nouvelle faune avec des créatures réalistes et fantastiques.
-                    <p><strong>Description :</strong> Alex's Mobs ajoute plus de 70 nouvelles créatures avec des comportements uniques.</p>
+                    <strong>Alex's Mobs</strong> 🦄 : Ajoute une vaste collection de nouveaux mobs réalistes et fantastiques.
+                    <p><strong>Description :</strong> Alex's Mobs enrichit la faune de Minecraft avec plus de 70 nouveaux mobs, chacun ayant des comportements uniques et interagissant avec l'environnement et le joueur.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
                         <li>Plus de 70 nouveaux mobs diversifiés.</li>
                         <li>Comportements et interactions réalistes.</li>
                         <li>Écosystèmes enrichis et équilibrés.</li>
-                        <li>Items et drops uniques.</li>
+                        <li>Items et drops uniques provenant de chaque mob.</li>
                     </ul>
                 </li>
                 <li class="mod-item" id="architectury">
                     <img src="./architectury.jpg" alt="Architectury">
-                    <strong>Architectury</strong> 🏗️ : Bibliothèque de code pour la compatibilité des mods.
-                    <p><strong>Description :</strong> Architectury améliore la compatibilité et le développement des mods entre différentes versions de Minecraft.</p>
+                    <strong>Architectury</strong> 🏗️ : Bibliothèque de code pour améliorer la compatibilité et le développement des mods.
+                    <p><strong>Description :</strong> Architectury fournit des outils et des API communs pour faciliter le travail des moddeurs et la compatibilité entre différentes versions de Minecraft.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
                         <li>Compatibilité inter-version des mods.</li>
-                        <li>API unifiée pour faciliter le développement.</li>
-                        <li>Documentation et support étendus.</li>
+                        <li>API unifiée pour le développement.</li>
+                        <li>Documentation et support étendus pour les moddeurs.</li>
                         <li>Intégration avec de nombreux autres mods.</li>
                     </ul>
                 </li>
                 <li class="mod-item" id="biomesoplenty">
                     <img src="./biomesoplenty.jpg" alt="Biomes O' Plenty">
-                    <strong>Biomes O' Plenty</strong> 🌳 : Nouveaux biomes magnifiques et variés.
-                    <p><strong>Description :</strong> Biomes O' Plenty ajoute une variété de nouveaux biomes magnifiques et variés à explorer.</p>
+                    <strong>Biomes O' Plenty</strong> 🌳 : Ajoute une variété de nouveaux biomes magnifiques et variés.
+                    <p><strong>Description :</strong> Biomes O' Plenty enrichit l'expérience de jeu avec des dizaines de nouveaux biomes terrestres et aquatiques, chacun offrant des ressources et des décors uniques.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
-                        <li>Des dizaines de nouveaux biomes terrestres et aquatiques.</li>
+                        <li>Des dizaines de nouveaux biomes.</li>
                         <li>Plantes, arbres et blocs exclusifs.</li>
-                        <li>Créatures et mobs spécifiques.</li>
+                        <li>Créatures et mobs spécifiques à certains biomes.</li>
                         <li>Ambiances et écosystèmes diversifiés.</li>
                     </ul>
                 </li>
                 <li class="mod-item" id="citadel">
                     <img src="./citadel.jpg" alt="Citadel">
-                    <strong>Citadel</strong> 🏰 : Bibliothèque essentielle pour d'autres mods.
-                    <p><strong>Description :</strong> Citadel fournit les bases nécessaires pour gérer les entités complexes et leurs comportements dans d'autres mods.</p>
+                    <strong>Citadel</strong> 🏰 : Bibliothèque essentielle pour le fonctionnement d'autres mods liés aux créatures.
+                    <p><strong>Description :</strong> Citadel fournit les bases nécessaires pour gérer les entités complexes et leurs comportements, supportant divers mods de créatures et de faune.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
                         <li>Support pour les entités complexes.</li>
-                        <li>API pour la gestion des mobs et de leurs comportements.</li>
+                        <li>API pour la gestion des mobs.</li>
                         <li>Intégration facile avec d'autres mods.</li>
-                        <li>Documentation complète.</li>
+                        <li>Documentation complète pour les développeurs.</li>
                     </ul>
                 </li>
                 <li class="mod-item" id="createenchantmentindustry">
                     <img src="./createenchantmentindustry.jpg" alt="Create Enchantment Industry">
-                    <strong>Create Enchantment Industry</strong> ⚙️ : Nouvelles possibilités d'enchantements et de mécanismes industriels.
-                    <p><strong>Description :</strong> Create Enchantment Industry intègre de nouvelles possibilités d'enchantements et de mécanismes industriels.</p>
+                    <strong>Create Enchantment Industry</strong> ⚙️ : Intègre de nouvelles possibilités d'enchantements et de mécanismes industriels.
+                    <p><strong>Description :</strong> Create Enchantment Industry enrichit les options disponibles pour les joueurs souhaitant optimiser leurs créations et équipements avec de nouveaux enchantements industriels et machines avancées.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
                         <li>Nouveaux enchantements industriels.</li>
@@ -161,92 +129,44 @@
                 </li>
                 <li class="mod-item" id="create">
                     <img src="./create.jpg" alt="Create">
-                    <strong>Create</strong> 🏭 : Machines complexes et mécanismes pour automatiser la construction.
-                    <p><strong>Description :</strong> Create introduit des machines complexes et des mécanismes pour automatiser la construction et les processus industriels.</p>
+                    <strong>Create</strong> 🏭 : Introduit des machines complexes et des mécanismes pour automatiser la construction et les processus industriels.
+                    <p><strong>Description :</strong> Create offre une nouvelle dimension de créativité et d'ingéniosité technique avec des machines et systèmes d'engrenages, permettant l'automatisation et la production à grande échelle.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
                         <li>Machines et systèmes d'engrenages.</li>
                         <li>Chaînes de montage et de production automatisées.</li>
                         <li>Compatibilité avec d'autres mods.</li>
-                        <li>Tutoriels et documentation.</li>
+                        <li>Tutoriels et documentation pour les constructions complexes.</li>
                     </ul>
                 </li>
                 <li class="mod-item" id="createstuffadditions">
                     <img src="./createstuffadditions.jpg" alt="Create Stuff Additions">
-                    <strong>Create Stuff Additions</strong> 🔧 : Nouveaux gadgets et outils pour le mod Create.
-                    <p><strong>Description :</strong> Create Stuff Additions ajoute des gadgets et des outils supplémentaires pour le mod Create.</p>
+                    <strong>Create Stuff Additions</strong> 🔧 : Étend le mod Create avec de nouveaux éléments et fonctionnalités pour encore plus de possibilités.
+                    <p><strong>Description :</strong> Create Stuff Additions est une extension du mod Create, ajoutant de nouveaux éléments et fonctionnalités pour encore plus de possibilités créatives et industrielles dans Minecraft.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
-                        <li>Nouveaux gadgets et outils.</li>
-                        <li>Composants supplémentaires pour les machines.</li>
-                        <li>Compatibilité avec les mécanismes du mod Create.</li>
-                        <li>Améliorations et optimisations.</li>
+                        <li>Éléments supplémentaires pour les machines Create.</li>
+                        <li>Nouveaux mécanismes et outils industriels.</li>
+                        <li>Compatibilité et intégration avec le mod Create.</li>
+                        <li>Possibilités accrues d'automatisation et de construction.</li>
                     </ul>
                 </li>
-                <li class="mod-item" id="createaddition">
-                    <img src="./createaddition.jpg" alt="Create Addition">
-                    <strong>Create Addition</strong> ⚙️ : Composants supplémentaires pour le mod Create.
-                    <p><strong>Description :</strong> Create Addition complète le mod Create en ajoutant des composants supplémentaires.</p>
+                <li class="mod-item" id="croptopia">
+                    <img src="./croptopia.jpg" alt="Croptopia">
+                    <strong>Croptopia</strong> 🌾 : Introduit une grande variété de nouvelles cultures et recettes culinaires pour diversifier l'agriculture et la cuisine.
+                    <p><strong>Description :</strong> Croptopia introduit une grande variété de nouvelles cultures et recettes culinaires, offrant une plus grande diversité dans l'agriculture et la cuisine. Les joueurs peuvent maintenant cultiver de nouvelles plantes et préparer de nombreux plats délicieux.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
-                        <li>Composants et pièces mécaniques supplémentaires.</li>
-                        <li>Intégration parfaite avec les systèmes du mod Create.</li>
-                        <li>Options avancées pour l'automatisation.</li>
-                        <li>Documentation et tutoriels.</li>
-                    </ul>
-                </li>
-                <li class="mod-item" id="createbigcannons">
-                    <img src="./createbigcannons.jpg" alt="Create Big Cannons">
-                    <strong>Create Big Cannons</strong> 🏹 : Construction et utilisation d'énormes canons.
-                    <p><strong>Description :</strong> Create Big Cannons permet de construire et utiliser d'énormes canons dans Minecraft.</p>
-                    <p><strong>Fonctionnalités principales :</strong></p>
-                    <ul>
-                        <li>Construction de canons de grande taille.</li>
-                        <li>Mécanismes de tir et de recharge.</li>
-                        <li>Compatibilité avec les systèmes du mod Create.</li>
-                        <li>Utilisation tactique pour la défense de bases.</li>
-                    </ul>
-                </li>
-                <li class="mod-item" id="createdeco">
-                    <img src="./createdeco.jpg" alt="Create Deco">
-                    <strong>Create Deco</strong> 🛋️ : Éléments de décoration pour embellir vos créations industrielles.
-                    <p><strong>Description :</strong> Create Deco introduit des éléments de décoration pour embellir vos créations industrielles.</p>
-                    <p><strong>Fonctionnalités principales :</strong></p>
-                    <ul>
-                        <li>Éléments de décoration variés.</li>
-                        <li>Compatibilité avec les machines et structures du mod Create.</li>
-                        <li>Options de personnalisation.</li>
-                        <li>Ambiance visuelle améliorée.</li>
-                    </ul>
-                </li>
-                <li class="mod-item" id="createliquidfuel">
-                    <img src="./createliquidfuel.jpg" alt="Create Liquid Fuel">
-                    <strong>Create Liquid Fuel</strong> ⛽ : Carburants liquides pour alimenter vos machines.
-                    <p><strong>Description :</strong> Create Liquid Fuel ajoute des carburants liquides pour alimenter vos machines et équipements.</p>
-                    <p><strong>Fonctionnalités principales :</strong></p>
-                    <ul>
-                        <li>Carburants liquides diversifiés.</li>
-                        <li>Systèmes de stockage et de distribution de carburant.</li>
-                        <li>Compatibilité avec les machines du mod Create.</li>
-                        <li>Augmentation de l'efficacité et de la productivité.</li>
-                    </ul>
-                </li>
-                <li class="mod-item" id="creativecore">
-                    <img src="./creativecore.jpg" alt="Creative Core">
-                    <strong>Creative Core</strong> 🌟 : Mod fondamental pour diverses extensions et fonctionnalités.
-                    <p><strong>Description :</strong> Creative Core supporte diverses extensions et fonctionnalités pour de nombreux mods créatifs et techniques.</p>
-                    <p><strong>Fonctionnalités principales :</strong></p>
-                    <ul>
-                        <li>API de base pour de nombreux autres mods.</li>
-                        <li>Améliorations de performance et de compatibilité.</li>
-                        <li>Outils et fonctionnalités supplémentaires.</li>
-                        <li>Documentation et support technique.</li>
+                        <li>De nombreuses nouvelles cultures à cultiver.</li>
+                        <li>Recettes culinaires diversifiées et réalistes.</li>
+                        <li>Interactions enrichies avec l'agriculture et la cuisine.</li>
+                        <li>Compatibilité avec d'autres mods alimentaires.</li>
                     </ul>
                 </li>
                 <li class="mod-item" id="dungeoncrawl">
                     <img src="./dungeoncrawl.jpg" alt="Dungeon Crawl">
-                    <strong>Dungeon Crawl</strong> 🏰 : Donjons complexes et excitants à explorer.
-                    <p><strong>Description :</strong> Dungeon Crawl remplit le monde de donjons complexes et excitants à explorer.</p>
+                    <strong>Dungeon Crawl</strong> 🏰 : Remplit le monde de donjons complexes et excitants à explorer.
+                    <p><strong>Description :</strong> Dungeon Crawl ajoute des donjons générés aléatoirement, offrant des défis et des récompenses pour les aventuriers intrépides. Les donjons sont remplis d'ennemis, de pièges et de trésors cachés, offrant une expérience d'exploration enrichie.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
                         <li>Donjons générés aléatoirement.</li>
@@ -257,8 +177,8 @@
                 </li>
                 <li class="mod-item" id="guardvillagers">
                     <img src="./guardvillagers.jpg" alt="Guard Villagers">
-                    <strong>Guard Villagers</strong> 🛡️ : Gardes villageois pour protéger les villages.
-                    <p><strong>Description :</strong> Guard Villagers ajoute des gardes villageois pour protéger les villages contre les menaces.</p>
+                    <strong>Guard Villagers</strong> 🛡️ : Ajoute des gardes villageois pour protéger les villages.
+                    <p><strong>Description :</strong> Guard Villagers améliore la défense des villages en ajoutant des gardes villageois armés qui protègent les habitants contre les menaces comme les pillards. Les gardes patrouillent et défendent activement les villages, renforçant leur sécurité.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
                         <li>Gardes villageois armés.</li>
@@ -269,8 +189,8 @@
                 </li>
                 <li class="mod-item" id="immersiveaircraft">
                     <img src="./immersiveaircraft.jpg" alt="Immersive Aircraft">
-                    <strong>Immersive Aircraft</strong> ✈️ : Construction et pilotage d'avions immersifs.
-                    <p><strong>Description :</strong> Immersive Aircraft permet de construire et piloter des avions immersifs dans Minecraft.</p>
+                    <strong>Immersive Aircraft</strong> ✈️ : Permet de construire et piloter des avions immersifs.
+                    <p><strong>Description :</strong> Immersive Aircraft permet aux joueurs de construire et de piloter des avions réalistes, offrant une nouvelle dimension de transport aérien dans Minecraft. Les avions peuvent être personnalisés et utilisés pour explorer et transporter des ressources.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
                         <li>Construction et personnalisation d'avions.</li>
@@ -281,8 +201,8 @@
                 </li>
                 <li class="mod-item" id="ironchest">
                     <img src="./ironchest.jpg" alt="IronChest">
-                    <strong>IronChest</strong> 🧰 : Coffres de différentes tailles et capacités pour améliorer le stockage.
-                    <p><strong>Description :</strong> IronChest introduit des coffres de différentes tailles et capacités pour améliorer le stockage.</p>
+                    <strong>IronChest</strong> 🧰 : Introduit des coffres de différentes tailles et capacités pour améliorer le stockage.
+                    <p><strong>Description :</strong> IronChest offre des solutions de rangement efficaces avec des coffres de différents matériaux et capacités. Les joueurs peuvent utiliser ces coffres pour organiser leurs ressources de manière plus modulaire et esthétique.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
                         <li>Coffres de divers matériaux (fer, or, diamant, etc.).</li>
@@ -293,8 +213,8 @@
                 </li>
                 <li class="mod-item" id="jei">
                     <img src="./jei.jpg" alt="Just Enough Items (JEI)">
-                    <strong>Just Enough Items (JEI)</strong> 📜 : Voir les recettes de crafting et les objets disponibles.
-                    <p><strong>Description :</strong> JEI est un outil indispensable pour voir les recettes de crafting et les objets disponibles dans Minecraft.</p>
+                    <strong>Just Enough Items (JEI)</strong> 📜 : Outil indispensable pour voir les recettes de crafting et les objets disponibles.
+                    <p><strong>Description :</strong> JEI facilite la gestion des matériaux et la création d'objets en affichant les recettes de crafting et les objets disponibles dans Minecraft. Il offre une interface utilisateur simple et intuitive pour rechercher et naviguer à travers les items.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
                         <li>Affichage des recettes de crafting.</li>
@@ -305,8 +225,8 @@
                 </li>
                 <li class="mod-item" id="justhammers">
                     <img src="./justhammers.jpg" alt="Just Hammers">
-                    <strong>Just Hammers</strong> 🔨 : Marteaux puissants pour miner plus efficacement.
-                    <p><strong>Description :</strong> Just Hammers ajoute des marteaux puissants pour miner plus efficacement, permettant de casser des blocs plus rapidement et sur une plus grande surface.</p>
+                    <strong>Just Hammers</strong> 🔨 : Ajoute des marteaux puissants pour miner plus efficacement.
+                    <p><strong>Description :</strong> Just Hammers permet de casser des blocs plus rapidement et sur une plus grande surface grâce à divers types de marteaux avec des niveaux de puissance différents, améliorant l'efficacité minière.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
                         <li>Divers types de marteaux avec des niveaux de puissance différents.</li>
@@ -317,8 +237,8 @@
                 </li>
                 <li class="mod-item" id="playerrevive">
                     <img src="./playerrevive.jpg" alt="Player Revive">
-                    <strong>Player Revive</strong> ❤️ : Réanimer les joueurs tombés au combat.
-                    <p><strong>Description :</strong> Player Revive permet de réanimer les joueurs tombés au combat, ajoutant une dimension coopérative et stratégique aux aventures en groupe.</p>
+                    <strong>Player Revive</strong> ❤️ : Permet de réanimer les joueurs tombés au combat.
+                    <p><strong>Description :</strong> Player Revive ajoute une dimension coopérative et stratégique aux aventures en groupe en permettant de réanimer les joueurs tombés au combat. Les mécanismes de réanimation sont configurables et renforcent la coopération.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
                         <li>Mécanismes de réanimation des joueurs.</li>
@@ -329,8 +249,8 @@
                 </li>
                 <li class="mod-item" id="pocketstorage">
                     <img src="./pocketstorage.jpg" alt="Pocket Storage">
-                    <strong>Pocket Storage</strong> 📦 : Solutions de stockage portables.
-                    <p><strong>Description :</strong> Pocket Storage offre des solutions de stockage portables pour garder vos objets organisés et accessibles à tout moment.</p>
+                    <strong>Pocket Storage</strong> 📦 : Offre des solutions de stockage portables pour garder vos objets organisés et accessibles.
+                    <p><strong>Description :</strong> Pocket Storage permet aux joueurs de transporter plus d'objets lors de leurs aventures grâce à des conteneurs de stockage portables, facilitant la gestion des ressources en déplacement.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
                         <li>Conteneurs de stockage portables.</li>
@@ -341,8 +261,8 @@
                 </li>
                 <li class="mod-item" id="simpleshops">
                     <img src="./simpleshops.jpg" alt="Simple Shops">
-                    <strong>Simple Shops</strong> 🛒 : Créer et gérer des boutiques simples.
-                    <p><strong>Description :</strong> Simple Shops permet de créer et gérer des boutiques simples pour échanger des biens avec d'autres joueurs.</p>
+                    <strong>Simple Shops</strong> 🛒 : Permet de créer et gérer des boutiques pour échanger des biens avec d'autres joueurs.
+                    <p><strong>Description :</strong> Simple Shops facilite le commerce et l'économie en jeu en permettant de créer et gérer des boutiques personnalisées. L'interface utilisateur intuitive simplifie les transactions et le commerce multijoueur.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
                         <li>Création et gestion de boutiques personnalisées.</li>
@@ -353,8 +273,8 @@
                 </li>
                 <li class="mod-item" id="storagedrawers">
                     <img src="./storagedrawers.jpg" alt="Storage Drawers">
-                    <strong>Storage Drawers</strong> 🗄️ : Tiroirs de rangement pratiques.
-                    <p><strong>Description :</strong> Storage Drawers introduit des tiroirs de rangement pratiques pour mieux organiser vos ressources.</p>
+                    <strong>Storage Drawers</strong> 🗄️ : Introduit des tiroirs de rangement pour mieux organiser vos ressources.
+                    <p><strong>Description :</strong> Storage Drawers offre une solution de stockage modulaire et esthétique avec des tiroirs de différentes tailles et capacités. Les joueurs peuvent facilement organiser et accéder à leurs ressources.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
                         <li>Tiroirs de différentes tailles et capacités.</li>
@@ -365,8 +285,8 @@
                 </li>
                 <li class="mod-item" id="terrablender">
                     <img src="./terrablender.jpg" alt="Terra Blender">
-                    <strong>Terra Blender</strong> 🌍 : Améliorer le terrain et le mélange des biomes.
-                    <p><strong>Description :</strong> Terra Blender améliore le terrain et le mélange des biomes, offrant des paysages plus naturels et harmonieux dans Minecraft.</p>
+                    <strong>Terra Blender</strong> 🌍 : Améliore le terrain et le mélange des biomes.
+                    <p><strong>Description :</strong> Terra Blender offre des paysages plus naturels et harmonieux en améliorant la génération de terrain et la transition entre les biomes, créant des environnements esthétiques et immersifs dans Minecraft.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
                         <li>Algorithmes de génération de terrain avancés.</li>
@@ -377,8 +297,8 @@
                 </li>
                 <li class="mod-item" id="travelersbackpack">
                     <img src="./travelersbackpack.jpg" alt="Traveler's Backpack">
-                    <strong>Traveler's Backpack</strong> 🎒 : Sacs à dos fonctionnels pour transporter plus d'objets.
-                    <p><strong>Description :</strong> Traveler's Backpack ajoute des sacs à dos fonctionnels pour transporter plus d'objets lors de vos aventures.</p>
+                    <strong>Traveler's Backpack</strong> 🎒 : Ajoute des sacs à dos fonctionnels pour transporter plus d'objets.
+                    <p><strong>Description :</strong> Traveler's Backpack offre une solution de stockage pratique et mobile avec des sacs à dos ayant des capacités de stockage variées. Les sacs à dos possèdent également des fonctionnalités supplémentaires comme les réservoirs de liquide.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
                         <li>Sacs à dos avec capacités de stockage variées.</li>
@@ -389,8 +309,8 @@
                 </li>
                 <li class="mod-item" id="vanillarefresh">
                     <img src="./vanillarefresh.jpg" alt="Vanilla Refresh">
-                    <strong>Vanilla Refresh</strong> 🍦 : Améliorations et mises à jour aux éléments classiques de Minecraft.
-                    <p><strong>Description :</strong> Vanilla Refresh apporte des améliorations et des mises à jour aux éléments classiques de Minecraft.</p>
+                    <strong>Vanilla Refresh</strong> 🍦 : Apporte des améliorations et des mises à jour aux éléments classiques de Minecraft.
+                    <p><strong>Description :</strong> Vanilla Refresh modernise le jeu sans en altérer l'essence, avec des améliorations visuelles, de nouveaux blocs et objets inspirés du jeu original, ainsi que des optimisations de gameplay et de performance.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
                         <li>Améliorations visuelles et graphiques.</li>
@@ -401,8 +321,8 @@
                 </li>
                 <li class="mod-item" id="simplevoicechat">
                     <img src="./simplevoicechat.jpg" alt="Simple Voice Chat">
-                    <strong>Simple Voice Chat</strong> 🎙️ : Chat vocal pour communiquer facilement avec les autres joueurs.
-                    <p><strong>Description :</strong> Simple Voice Chat intègre un chat vocal simple pour communiquer facilement avec les autres joueurs.</p>
+                    <strong>Simple Voice Chat</strong> 🎙️ : Intègre un chat vocal simple pour communiquer avec les autres joueurs.
+                    <p><strong>Description :</strong> Simple Voice Chat améliore la coordination et l'interaction en jeu en offrant une fonctionnalité de chat vocal intégrée avec des options de réglage. La qualité sonore est claire et stable, et le chat vocal est compatible avec les serveurs multijoueurs.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
                         <li>Chat vocal intégré avec options de réglage.</li>
@@ -413,8 +333,8 @@
                 </li>
                 <li class="mod-item" id="worldedit">
                     <img src="./worldedit.jpg" alt="World Edit">
-                    <strong>World Edit</strong> 🛠️ : Modifier et personnaliser le terrain rapidement.
-                    <p><strong>Description :</strong> World Edit est un outil puissant pour modifier et personnaliser le terrain rapidement.</p>
+                    <strong>World Edit</strong> 🛠️ : Outil puissant pour modifier et personnaliser le terrain rapidement.
+                    <p><strong>Description :</strong> World Edit offre des possibilités de construction et de terraformation étendues grâce à ses outils de sélection et d'édition de terrain. Les joueurs peuvent utiliser des commandes avancées pour modifier rapidement et efficacement le terrain, rendant les projets de grande échelle plus gérables.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
                         <li>Outils de sélection et d'édition de terrain.</li>
@@ -425,8 +345,8 @@
                 </li>
                 <li class="mod-item" id="xaerosminimap">
                     <img src="./xaerosminimap.jpg" alt="Xaero's Minimap">
-                    <strong>Xaero's Minimap</strong> 🗺️ : Mini-carte pratique pour naviguer et explorer.
-                    <p><strong>Description :</strong> Xaero's Minimap ajoute une mini-carte pratique pour naviguer et explorer le monde.</p>
+                    <strong>Xaero's Minimap</strong> 🗺️ : Ajoute une mini-carte pratique pour naviguer et explorer le monde.
+                    <p><strong>Description :</strong> Xaero's Minimap offre une vue d'ensemble du terrain et des structures environnantes grâce à une mini-carte personnalisable avec options de zoom. Les joueurs peuvent marquer des points d'intérêt et naviguer plus facilement dans le monde.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
                         <li>Mini-carte personnalisable avec options de zoom.</li>
@@ -437,8 +357,8 @@
                 </li>
                 <li class="mod-item" id="yungsapi">
                     <img src="./yungsapi.jpg" alt="Yung's API">
-                    <strong>Yung's API</strong> 📚 : API essentielle pour les mods de Yung.
-                    <p><strong>Description :</strong> Yung's API est une API essentielle pour faire fonctionner divers autres mods de Yung.</p>
+                    <strong>Yung's API</strong> 📚 : API essentielle pour faire fonctionner divers autres mods de Yung.
+                    <p><strong>Description :</strong> Yung's API fournit les bases nécessaires pour la création et l'intégration de contenus avancés dans les mods de Yung. Cette API supporte les fonctionnalités et les entités complexes, offrant une compatibilité étendue avec d'autres mods.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
                         <li>API de base pour les mods de Yung.</li>
@@ -449,8 +369,8 @@
                 </li>
                 <li class="mod-item" id="yungsbetterdungeons">
                     <img src="./yungsbetterdungeons.jpg" alt="Yung's Better Dungeons">
-                    <strong>Yung's Better Dungeons</strong> 🏰 : Donjons améliorés et plus complexes.
-                    <p><strong>Description :</strong> Yung's Better Dungeons introduit des donjons améliorés et plus complexes à explorer.</p>
+                    <strong>Yung's Better Dungeons</strong> 🏰 : Introduit des donjons améliorés et plus complexes à explorer.
+                    <p><strong>Description :</strong> Yung's Better Dungeons offre des donjons détaillés avec des designs uniques, remplis d'ennemis, de boss et de trésors. Les joueurs peuvent explorer ces donjons pour relever des défis plus grands et vivre des aventures plus riches.</p>
                     <p><strong>Fonctionnalités principales :</strong></p>
                     <ul>
                         <li>Donjons détaillés avec des designs uniques.</li>
