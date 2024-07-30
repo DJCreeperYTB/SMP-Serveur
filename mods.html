@@ -27,18 +27,23 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .mod-item.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .mod-item:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
         }
         .mod-item img {
             display: block;
             margin: 0 auto;
             width: 750px; /* Ajustez la largeur selon vos besoins */
             height: auto; /* Conserve le ratio d'aspect de l'image */
-        }
-        .mod-item:nth-child(odd) {
-            background: #e9e9e9;
-        }
-        .mod-item:nth-child(even) {
-            background: #fff;
         }
         .mod-item p {
             clear: both;
@@ -123,6 +128,9 @@
         }
         #yungsbetterdungeons {
             background: #a1315c;
+        }
+        #modspack {
+            background: #ffee00b7;
         }
     </style>
 </head>
@@ -446,7 +454,32 @@
                         <li>Compatibilité avec d'autres mods d'exploration.</li>
                     </ul>
                 </li>
+                <li class="mod-item" id="modspack">
+                    <img src="./fichier zip.png" alt="modspack">
+                    <strong>Modspack</strong> 📁 : Le modspack officiel du serveur SMP !
+                    <p><strong>Téléchargez :</strong> Pour jouer au serveur, il vous faudra <a href="https://drive.google.com/drive/folders/11I8I8Lgh6xA_FHKExZYamUxZZiK0KqCP">le modspack</a></p>
+                    </ul>
+                </li>
             </ul>
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const modItems = document.querySelectorAll('.mod-item');
+    
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('show');
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
+    
+                modItems.forEach(item => {
+                    observer.observe(item);
+                });
+            });
+        </script>    
     </body>
 </html>
