@@ -107,6 +107,8 @@ section#info {
 
     nav .nav-button {
         font-size: 0.8em;
+        margin: 10px 0; /* Ajoutez des marges verticales pour éviter le chevauchement */
+        display: block; /* Affichez les boutons en bloc pour qu'ils prennent toute la largeur disponible */
     }
 
     .video-item {
