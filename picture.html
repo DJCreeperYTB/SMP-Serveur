@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie de Photos</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #05CF51; /* Arrière-plan vert */
+            color: #D3D3D3; /* Texte en gris clair */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        /* Style pour le bouton de retour */
+        .retour-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: white;
+            border: 2px solid black;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        /* Conteneur principal pour les photos */
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+        }
+        /* Style pour chaque élément de photo */
+        .photo-item {
+            margin: 10px;
+            border: 2px solid #D3D3D3; /* Bordure grise */
+            border-radius: 10px;
+            background-color: white;
+            overflow: hidden;
+            width: 300px; /* Largeur fixe pour une mise en page cohérente */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .photo-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .photo-item h3 {
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+            background-color: #D3D3D3; /* Fond gris clair */
+            color: black; /* Texte noir */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Bouton de retour en haut à droite -->
+    <button onclick="window.location.href='./index.html';" class="retour-button">Retour</button>
+
+    <header>
+        <h2 style="text-align: center; padding: 20px; color: white;">Galerie de Photos</h2>
+    </header>
+
+    <main class="photo-gallery">
+        <div class="photo-item">
+            <h3>Carte du SMP</h3>
+            <img src="./Maps 5X5.png" alt="Carte du SMP">
+        </div>
+        <div class="photo-item">
+            <h3>La mairie</h3>
+            <img src="./Chateau.png" alt="La mairie">
+        </div>
+        <div class="photo-item">
+            <h3>Commerce</h3>
+            <img src="./Achat.png" alt="Commerce">
+        </div>
+        <div class="photo-item">
+            <h3>Port du spawn</h3>
+            <img src="./Port.png" alt="Port du spawn">
+        </div>
+        <div class="photo-item">
+            <h3>DJCreeper en costard accompagner de _ratchette_</h3>
+            <img src="./DJCreeper et Ratchette.png" alt="DJCreeper en costard accompagner de _ratchette_">
+        </div>
+        <!-- Ajoutez plus de photos ici -->
+    </main>
+</body>
+</html>

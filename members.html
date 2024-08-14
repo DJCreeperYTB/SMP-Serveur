@@ -23,7 +23,7 @@
         }
         .members ul li {
             margin: 10px 0;
-            font-family: 'Minecraftia', sans-serif; /* Assurez-vous d'avoir cette police d'installée */
+            font-family: 'Minecraftia', sans-serif;
         }
         .team-green {
             color: green;
@@ -40,33 +40,102 @@
         .solo {
             color: black;
         }
+        .sort-buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sort-buttons button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+            /* Style pour le bouton de retour */
+            .retour-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: white;
+            border: 2px solid black;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
+            <!-- Bouton de retour en haut à droite -->
+            <button onclick="window.location.href='./index.html';" class="retour-button">Retour</button>
     <header>
         <h2>Membres</h2>
     </header>
     <main id="content">
+        <div class="sort-buttons">
+            <button onclick="sortMembers('name', 'asc')">Trier par nom (A-Z)</button>
+            <button onclick="sortMembers('name', 'desc')">Trier par nom (Z-A)</button>
+            <button onclick="sortMembers('date', 'asc')">Trier par date d'ajout (Asc)</button>
+            <button onclick="sortMembers('date', 'desc')">Trier par date d'ajout (Desc)</button>
+            <button onclick="sortMembers('team', 'asc')">Trier par team (A-Z)</button>
+            <button onclick="sortMembers('team', 'desc')">Trier par team (Z-A)</button>
+        </div>
         <div class="members">
-            <ul>
-                <li class="team-red">Agent (Team ArthyoZ et Agent)</li>
-                <li class="team-green">Alex7209 (Team DJCreeper)</li>
-                <li class="team-red">ArthyoZ (Team ArthyoZ et Agent)</li>
-                <li class="solo">Chabadas (Solo)</li>
-                <li class="team-green">DJCreeper (Team DJCreeper)</li>
-                <li class="team-green">Dindon Mignon (Team DJCreeper)</li>
-                <li class="team-green">Julesperso10 (Team DJCreeper)</li>
-                <li class="team-blue">Juste_green (Team KK.)</li>
-                <li class="solo">Kevlevrai_ (Solo)</li>
-                <li class="team-yellow">Komafeu (Team Akarnace)</li>
-                <li class="solo">LostGuppy150 (Solo)</li>
-                <li class="solo">MG SHOW (Solo)</li>
-                <li class="team-blue">Obirush (Team KK.)</li>
-                <li class="solo">Slopas (Solo)</li>
-                <li class="solo">_Frust_ (Solo)</li>
-                <li class="team-yellow">_ratchette_ (Team Akarnace)</li>
+            <ul id="member-list">
+                <li class="team-red" data-name="Agent" data-team="Team ArthyoZ et Agent" data-date="17">Agent (Team ArthyoZ et Agent)</li>
+                <li class="team-green" data-name="Alex7209" data-team="Team DJCreeper" data-date="7">Alex7209 (Team DJCreeper)</li>
+                <li class="team-red" data-name="ArthyoZ" data-team="Team ArthyoZ et Agent" data-date="12">ArthyoZ (Team ArthyoZ et Agent)</li>
+                <li class="solo" data-name="Chabadas" data-team="Solo" data-date="13">Chabadas (Solo)</li>
+                <li class="team-green" data-name="DJCreeper" data-team="Team DJCreeper" data-date="3">DJCreeper (Team DJCreeper)</li>
+                <li class="team-green" data-name="Dindon Mignon" data-team="Team DJCreeper" data-date="11">Dindon Mignon (Team DJCreeper)</li>
+                <li class="team-green" data-name="Julesperso10" data-team="Team DJCreeper" data-date="10">Julesperso10 (Team DJCreeper)</li>
+                <li class="team-blue" data-name="Juste_green" data-team="Team KK." data-date="15">Juste_green (Team KK.)</li>
+                <li class="solo" data-name="Kevlevrai_" data-team="Solo" data-date="1">Kevlevrai_ (Solo)</li>
+                <li class="team-yellow" data-name="Komafeu" data-team="Team Akarnace" data-date="4">Komafeu (Team Akarnace)</li>
+                <li class="solo" data-name="LostGuppy150" data-team="Solo" data-date="5">LostGuppy150 (Solo)</li>
+                <li class="solo" data-name="MG SHOW" data-team="Solo" data-date="18">MG SHOW (Solo)</li>
+                <li class="team-blue" data-name="Obirush" data-team="Team KK." data-date="14">Obirush (Team KK.)</li>
+                <li class="solo" data-name="Slopas" data-team="Solo" data-date="16">Slopas (Solo)</li>
+                <li class="team-yellow" data-name="_Frust_" data-team="Team Akarnace" data-date="6">_Frust_ (Team Akarnace)</li>
+                <li class="team-yellow" data-name="_ratchette_" data-team="Team Akarnace" data-date="2">_ratchette_ (Team Akarnace)</li>
             </ul>
         </div>
     </main>
+    <script>
+        function sortMembers(criteria, order) {
+            const list = document.getElementById('member-list');
+            const items = Array.from(list.getElementsByTagName('li'));
+
+            items.sort((a, b) => {
+                let compA, compB;
+
+                if (criteria === 'name') {
+                    compA = a.getAttribute('data-name').toLowerCase();
+                    compB = b.getAttribute('data-name').toLowerCase();
+                } else if (criteria === 'date') {
+                    compA = parseInt(a.getAttribute('data-date'));
+                    compB = parseInt(b.getAttribute('data-date'));
+                } else if (criteria === 'team') {
+                    compA = a.getAttribute('data-team').toLowerCase();
+                    compB = b.getAttribute('data-team').toLowerCase();
+                    if (compA === compB) {
+                        compA = a.getAttribute('data-name').toLowerCase();
+                        compB = b.getAttribute('data-name').toLowerCase();
+                    }
+                }
+
+                if (order === 'asc') {
+                    return (compA < compB) ? -1 : (compA > compB) ? 1 : 0;
+                } else {
+                    return (compA > compB) ? -1 : (compA < compB) ? 1 : 0;
+                }
+            });
+
+            // Clear the list and append sorted items
+            list.innerHTML = '';
+            items.forEach(item => list.appendChild(item));
+        }
+    </script>
 </body>
 </html>
