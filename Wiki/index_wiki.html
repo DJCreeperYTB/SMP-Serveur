@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleCraft Wiki</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6e6e6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header img {
+            width: auto;
+            height: auto;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .nav a {
+            background-color: #3498db;
+            color: white;
+            padding: 14px 20px;
+            margin: 0 10px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .nav a:hover {
+            background-color: #2980b9;
+        }
+
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #2980b9;
+        }
+
+        .search-results {
+            position: absolute;
+            top: 45px;
+            width: 100%;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            z-index: 1000;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .search-results a {
+            display: block;
+            padding: 10px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .search-results a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .description {
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .description h2 {
+            font-size: 2em;
+            color: #2c3e50;
+        }
+
+        .description p {
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <img src="./SimpleCraft.png" alt="SimpleCraft Logo">
+        <h1>SimpleCraft Wiki</h1>
+    </div>
+
+    <div class="nav">
+        <a href="items.html">Items</a>
+        <a href="tetes_joueurs.html">Têtes de joueurs</a>
+        <a href="versions.html">Versions</a>
+        <a href="craft.html">Crafts</a>
+    </div>
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Rechercher un article...">
+        <button type="button">Rechercher</button>
+        <div id="searchResults" class="search-results"></div>
+    </div>
+
+    <div class="description">
+        <h2>À propos de SimpleCraft</h2>
+        <p>SimpleCraft est un mod développé par DJCreeper pour le serveur Minecraft SMP entre youtubeurs. 
+        SimpleCraft ajoute des crafts qui n'étaient pas possibles en vanilla, comme le totem d'immortalité, 
+        la pomme dorée enchantée, le trident, etc. De plus, le mod introduit des blocs de tête des joueurs 
+        participants au SMP, avec leurs logos et les crafts de leur choix. 
+        DJCreeper a également ajouté des items personnalisés tels qu'une armure en émeraude et des blocs d'XP !</p>
+    </div>
+
+    <script>
+        const items = [
+            { name: 'XP', url: 'xp.html' },
+            { name: 'Overworld Cristal', url: 'overworld_cristal.html' },
+            { name: 'Nether Cristal', url: 'nether_cristal.html' },
+            { name: 'Ender Cristal', url: 'ender_cristal.html' },
+            { name: 'Bloc d\'XP', url: 'bloc_dxp.html' },
+            { name: 'DJCreeper', url: 'djcreeper.html' },
+            { name: 'Frust', url: 'frust.html' },
+            { name: 'Julesperso10', url: 'julesperso10.html' },
+            { name: 'Kevlevrai', url: 'kevlevrai.html' },
+            { name: 'LostGuppy', url: 'lostguppy.html' },
+            { name: 'Ratchette', url: 'ratchette.html' },
+            { name: 'Slopas', url: 'slopas.html' },
+            { name: 'Totem d\'immortalité', url: 'totem_dimmortalite.html' },
+            { name: 'Élytra', url: 'elytra.html' },
+            { name: 'Trident', url: 'trident.html' },
+            { name: 'Toile d\'araignée', url: 'toile_daraignee.html' },
+            { name: 'Pomme dorée enchantée', url: 'pomme_doree_enchantee.html' },
+            { name: 'Version 1.0', url: 'version_1_0.html' },
+            { name: 'Version 1.1', url: 'version_1_1.html' },
+            { name: 'Komafeu', url: 'komafeu.html'},
+            { name: 'Tête de joueur', url: 'player_head.html'},
+            { name: 'Armure en émeraude', url: 'armure_en_emeraude.html'}
+        ];
+
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+
+        searchInput.addEventListener('input', () => {
+            const query = searchInput.value.toLowerCase();
+            searchResults.innerHTML = '';
+
+            const filteredItems = items.filter(item => item.name.toLowerCase().includes(query));
+            
+            filteredItems.forEach(item => {
+                const a = document.createElement('a');
+                a.href = item.url;
+                a.textContent = item.name;
+                searchResults.appendChild(a);
+            });
+
+            if (filteredItems.length === 0 && query) {
+                const noResults = document.createElement('div');
+                noResults.textContent = 'Aucun résultat trouvé';
+                searchResults.appendChild(noResults);
+            }
+        });
+    </script>
+</body>
+
+</html>
