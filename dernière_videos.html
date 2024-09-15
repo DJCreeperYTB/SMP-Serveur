@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dernière vidéos</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Dernières vidéos</title>
     <style>
         body {
             background-color: #c4e3f3; /* Arrière-plan bleu clair */
+            font-family: Arial, sans-serif;
         }
-                /* Style pour le bouton de retour */
-                .retour-button {
+
+        /* Style pour le bouton de retour */
+        .retour-button {
             position: absolute;
             top: 20px;
             right: 20px;
@@ -23,35 +24,115 @@
             font-weight: bold;
             cursor: pointer;
         }
+
+        /* Centrer le header */
+        header {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* Style pour la barre de recherche */
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+
+        /* Style pour l'affichage des vidéos */
+        #latest-videos {
+            display: flex;
+            flex-wrap: wrap; /* Permet d'organiser les vidéos en lignes */
+            justify-content: center; /* Centrer les vidéos */
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .video-item {
+            flex: 1 1 calc(25% - 40px); /* Adapte la taille des vidéos en fonction de l'espace disponible */
+            max-width: 300px;
+        }
+
+        .video-item img {
+            width: 100%;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        /* Media queries pour les petits écrans */
+        @media (max-width: 768px) {
+            .video-item {
+                flex: 1 1 calc(50% - 20px); /* Deux vidéos par ligne sur des écrans moyens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .video-item {
+                flex: 1 1 100%; /* Une seule vidéo par ligne sur les petits écrans */
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Bouton de retour en haut à droite -->
     <button onclick="window.location.href='./index.html';" class="retour-button">Retour</button>
+
     <header>
-        <h2>Dernière vidéos mise en ligne</h2>
+        <h2>Dernières vidéos mises en ligne</h2>
     </header>
-    <div class="video-item">
-        <a href="https://www.youtube.com/watch?v=fhVQAKvTlf4" target="_blank">
-            <img src="JE FULL TROLL CE NOUVEAU SMP (SMP - Minecraft).png" alt="Miniature vidéo">
-        </a>
+
+    <!-- Barre de recherche -->
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Rechercher une vidéo ou une chaîne..." onkeyup="searchVideos()">
     </div>
-    <div class="video-item">
-        <a href="https://www.youtube.com/watch?v=3lymiatJ6pM" target="_blank">
-            <img src="Je Construit la plus GROSSE ILE de MINECRAFT en SURVIE! [SMP].png" alt="Miniature vidéo">
-        </a>
-    </div>
+
     <main id="latest-videos">
-        <div class="video-item">
+        <div class="video-item" data-title="JE FULL TROLL CE NOUVEAU SMP" data-channel="Kevlevrai">
+            <a href="https://www.youtube.com/watch?v=fhVQAKvTlf4" target="_blank">
+                <img src="JE FULL TROLL CE NOUVEAU SMP (SMP - Minecraft).png" alt="Miniature vidéo">
+            </a>
+        </div>
+        <div class="video-item" data-title="Je Construit la plus GROSSE ILE de MINECRAFT en SURVIE!" data-channel="LostGuppy">
+            <a href="https://www.youtube.com/watch?v=3lymiatJ6pM" target="_blank">
+                <img src="Je Construit la plus GROSSE ILE de MINECRAFT en SURVIE! [SMP].png" alt="Miniature vidéo">
+            </a>
+        </div>
+        <div class="video-item" data-title="SMP - Bande Annonce Officiel" data-channel="DJCreeper">
             <a href="https://www.youtube.com/watch?v=bMJruyo5wTs" target="_blank">
                 <img src="SMP BA OFF CODE.png" alt="Miniature vidéo">
             </a>
         </div>
-        <div class="video-item">
+        <div class="video-item" data-title="test minia smp" data-channel="SMP">
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
                 <img src="test minia smp.png" alt="Miniature vidéo">
             </a>
         </div>
     </main>
+
+    <script>
+        // Fonction de recherche
+        function searchVideos() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const videoItems = document.querySelectorAll('.video-item');
+            
+            videoItems.forEach(function(video) {
+                const title = video.getAttribute('data-title').toLowerCase();
+                const channel = video.getAttribute('data-channel').toLowerCase();
+                
+                if (title.includes(input) || channel.includes(input)) {
+                    video.style.display = '';
+                } else {
+                    video.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
