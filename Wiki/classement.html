@@ -96,181 +96,78 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>DJCreeper</td>
-                    <td>100</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>Kevlevrai</td>
-                    <td>100</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>LostGuppy</td>
-                    <td>0</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>Ratchette</td>
-                    <td>0</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>Komafeu</td>
-                    <td>0</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>ArthyoZ et Agent</td>
-                    <td>0</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>Frust</td>
-                    <td>0</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>Chabadas</td>
-                    <td>0</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>Obirush</td>
-                    <td>0</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>Juste_green</td>
-                    <td>0</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>Slopas</td>
-                    <td>100</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>MG SHOW</td>
-                    <td>0</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
+
             </tbody>
         </table>
     </div>
 
     <script>
-        function sortTable() {
-            const table = document.getElementById("classementTable").getElementsByTagName("tbody")[0];
-            const rows = Array.from(table.rows);
+        const youtubeurs = [
+            { pseudo: 'DJCreeper', vues: 300, medailleBronze: 3, medailleArgent: 0, medailleOr: 0, tropheeBronze: 0, tropheeArgent: 0, tropheeOr: 0, tropheeDiamant: 0, tropheeDiamantRouge: 0 },
+            { pseudo: 'Kevlevrai', vues: 200, medailleBronze: 2, medailleArgent: 0, medailleOr: 0, tropheeBronze: 0, tropheeArgent: 0, tropheeOr: 0, tropheeDiamant: 0, tropheeDiamantRouge: 0 },
+            { pseudo: 'LostGuppy', vues: 100, medailleBronze: 1, medailleArgent: 0, medailleOr: 0, tropheeBronze: 0, tropheeArgent: 0, tropheeOr: 0, tropheeDiamant: 0, tropheeDiamantRouge: 0 },
+            { pseudo: 'Slopas', vues: 100, medailleBronze: 1, medailleArgent: 0, medailleOr: 0, tropheeBronze: 0, tropheeArgent: 0, tropheeOr: 0, tropheeDiamant: 0, tropheeDiamantRouge: 0 },
+        ];
 
-            rows.sort((a, b) => {
-                const classementA = parseInt(a.cells[2].innerText);
-                const classementB = parseInt(b.cells[2].innerText);
-                return classementA - classementB;
+        function generateTable() {
+            const tableBody = document.getElementById("classementTable").getElementsByTagName("tbody")[0];
+            tableBody.innerHTML = "";  // On vide le contenu avant de remplir
+
+            // On trie par nombre de vues (ordre décroissant)
+            youtubeurs.sort((a, b) => b.vues - a.vues);
+
+            let classementActuel = 1;
+            let vuesPrecedentes = null;
+            let occurrences = 0;
+
+            youtubeurs.forEach((youtubeur, index) => {
+                const row = tableBody.insertRow();
+
+                const cellPseudo = row.insertCell(0);
+                cellPseudo.textContent = youtubeur.pseudo;
+
+                const cellVues = row.insertCell(1);
+                cellVues.textContent = youtubeur.vues;
+
+                // Si les vues sont égales à celles du précédent, on garde le même classement
+                if (youtubeur.vues === vuesPrecedentes) {
+                    occurrences++;
+                } else {
+                    classementActuel += occurrences;
+                    occurrences = 1;
+                }
+                vuesPrecedentes = youtubeur.vues;
+
+                const cellClassement = row.insertCell(2);
+                cellClassement.textContent = classementActuel;  // Classement adapté aux égalités
+
+                const cellMedailleBronze = row.insertCell(3);
+                cellMedailleBronze.textContent = youtubeur.medailleBronze;
+
+                const cellMedailleArgent = row.insertCell(4);
+                cellMedailleArgent.textContent = youtubeur.medailleArgent;
+
+                const cellMedailleOr = row.insertCell(5);
+                cellMedailleOr.textContent = youtubeur.medailleOr;
+
+                const cellTropheeBronze = row.insertCell(6);
+                cellTropheeBronze.textContent = youtubeur.tropheeBronze;
+
+                const cellTropheeArgent = row.insertCell(7);
+                cellTropheeArgent.textContent = youtubeur.tropheeArgent;
+
+                const cellTropheeOr = row.insertCell(8);
+                cellTropheeOr.textContent = youtubeur.tropheeOr;
+
+                const cellTropheeDiamant = row.insertCell(9);
+                cellTropheeDiamant.textContent = youtubeur.tropheeDiamant;
+
+                const cellTropheeDiamantRouge = row.insertCell(10);
+                cellTropheeDiamantRouge.textContent = youtubeur.tropheeDiamantRouge;
             });
-
-            rows.forEach(row => table.appendChild(row));
         }
 
-        document.addEventListener("DOMContentLoaded", sortTable);
+        document.addEventListener("DOMContentLoaded", generateTable);
     </script>
 </body>
 
